@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ItemRow from "../ItemRow/ItemRow";
 
 class Items extends Component {
   state = {
@@ -32,11 +33,11 @@ class Items extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.state.items.map((item) => (
-                    <tr>
-                      <th scope="row">{item.id}</th>
-                      <td>{item.name}</td>
-                    </tr>
+                  {this.state.items.map(item => (
+                    <ItemRow 
+                        id={item.id}
+                        name={item.name}
+                    />
                   ))}
                 </tbody>
               </table>

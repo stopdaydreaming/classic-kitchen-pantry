@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import Items from './components/Items/Items';
 
 function App() {
   return (
     <div className="App">
-      <h1>Classic Pantry</h1>
+      <h1 className="text-center mb-5">Classic Pantry</h1>
+      <Items/>
     </div>
   );
 }

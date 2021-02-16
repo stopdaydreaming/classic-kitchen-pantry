@@ -24,26 +24,26 @@ class Items extends Component {
     newItem: "banana"
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     const newItem = {
-      id: this.state.item.length + 1,
+      id: this.state.items.length + 1,
       name: this.state.newItem
     };
 
-    const itemsArray = [this.state.items];
+    const itemsArray = [...this.state.items];
     itemsArray.push(newItem);
 
     this.setState({
-      items: itemsArray
+      items: itemsArray,
     });
   };
 
@@ -72,16 +72,17 @@ class Items extends Component {
 
         <div className="row">
           <div className="col-7">
-            <form onSubmit={this.state.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="item">Add a new item to your pantry</label>
                 <input
                   type="text"
                   className="form-control"
                   id="item"
-                  name="newItem"
+                  //name must match the key
+                  name="newItem" 
                   value={this.state.newItem}
-                  onChange={this.state.handleInputChange}
+                  onChange={this.handleInputChange}
                 />
               </div>
               <button type="submit" className="btn btn-primary">

@@ -35,8 +35,7 @@ class Items extends Component {
                 <tbody>
                   {this.state.items.map(item => (
                     <ItemRow 
-                        id={item.id}
-                        name={item.name}
+                        {...item}
                     />
                   ))}
                 </tbody>

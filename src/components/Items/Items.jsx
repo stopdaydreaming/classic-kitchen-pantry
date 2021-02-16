@@ -79,9 +79,9 @@ class Items extends Component {
                   type="text"
                   className="form-control"
                   id="item"
-                  //name must match the key
-                  name="newItem" 
-                  value={this.state.newItem}
+                  defaultValue={this.state.newItem}
+                  //name must match key
+                  name="newItem"
                   onChange={this.handleInputChange}
                 />
               </div>

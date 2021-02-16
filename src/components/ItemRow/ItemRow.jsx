@@ -5,6 +5,7 @@ const ItemRow = (props) => {
         <tr>
         <th scope="row">{props.id}</th>
         <td>{props.name}</td>
+        <td>{props.calorieCount}</td>
       </tr>
     )
 }

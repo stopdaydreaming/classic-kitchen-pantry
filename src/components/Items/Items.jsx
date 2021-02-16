@@ -6,15 +6,18 @@ class Items extends Component {
     items: [
       {
         id: 1,
-        name: "garlic salt"
+        name: "garlic salt",
+        calorieCount: 0
       },
       {
         id: 2,
-        name: "macaroni noodles"
+        name: "macaroni noodles",
+        calorieCount: 100
       },
       {
         id: 3,
-        name: "canned pinto beans"
+        name: "canned pinto beans",
+        calorieCount: 25
       }
     ]
   };
@@ -30,13 +33,12 @@ class Items extends Component {
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Calorie Count</th>
                   </tr>
                 </thead>
                 <tbody>
                   {this.state.items.map(item => (
-                    <ItemRow 
-                        {...item}
-                    />
+                    <ItemRow key={item.id} {...item} />
                   ))}
                 </tbody>
               </table>
